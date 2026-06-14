@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import PageTransition from '@/components/PageTransition'
+import ClientProviders from '@/components/ClientProviders'
 import Script from 'next/script'
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -76,9 +74,7 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <PageTransition>{children}</PageTransition>
-        <Analytics />
-        <SpeedInsights />
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );
