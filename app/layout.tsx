@@ -78,8 +78,8 @@ export default function RootLayout({
         </noscript>
         <PageTransition>{children}</PageTransition>
         <Analytics />
+        <SpeedInsights />
       </body>
-      <SpeedInsights />
     </html>
   );
 }

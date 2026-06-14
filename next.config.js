@@ -1,9 +1,6 @@
-const path = require('path');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    // Temporarily ignore ESLint errors during build to get past this issue
     ignoreDuringBuilds: true,
   },
   images: {
@@ -14,15 +11,9 @@ const nextConfig = {
     formats: ['image/webp'],
     minimumCacheTTL: 60,
   },
-  webpack: (config) => {
-    config.resolve.alias['@'] = path.resolve(__dirname, 'src');
-    return config;
-  },
-  // Removed 'output: export' to enable server-side features and dynamic sitemap generation
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },

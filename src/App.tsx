@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Hero from '../app/components/Hero';
 import Services from '../app/components/Home';
-import About from '../app/about/page';
-import Contact from '../app/contact-us/page';
+
+// Note: This file is not used by Next.js App Router.
+// Routing is handled by app/page.tsx and the App Router.
 
 const AppContainer = styled.div`
   min-height: 100vh;
